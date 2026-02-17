@@ -32,7 +32,7 @@ git add .
 git commit -m "Initial stable analysis code" -q
 git push origin main -q # Push to our "server"
 
-# 4. SIMULATE THE REMOTE CHANGE (Dr. Bohr pushes to the server)
+# 4. Dr. Bohr pushes to the server
 # We do this by creating a temporary clone to mimic another person
 cd ..
 git clone cern_central_server dr_bohr_work -q
@@ -43,7 +43,7 @@ git commit -m "CRITICAL: Updated background calibration constants" -q
 git push origin main -q
 cd ..
 
-# 5. BACK TO STUDENT: They make their own changes on a branch
+# 5. They make their own changes on a branch
 cd student_work
 git checkout -b feature/better-plots -q
 sed -i 's/BG_SCALE = 50/BG_SCALE = 55  # My manual tweak/' analyze_higgs.py
@@ -54,7 +54,5 @@ git commit -m "Improved plot resolution and changed color" -q
 echo "----------------------------------------------------------"
 echo "LEVEL 2 REPO READY"
 echo "You are working in /student_work"
-echo "1. You are on branch 'feature/better-plots'."
-echo "2. Dr. Bohr has pushed changes to 'main' on the server."
-echo "3. Try to merge 'main' into your branch."
+echo "You are working on branch feature/better-plots"
 echo "----------------------------------------------------------"
