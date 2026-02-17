@@ -6,17 +6,17 @@ cd cern_higgs_search
 git init --initial-branch=main  -q
 
 # 2. Initial (Empty) State
-cat <<EOF > analyze_higgs.py
+cat <<EOF > analyse_higgs.py
 import numpy as np
 import matplotlib.pyplot as plt
 
 # TODO: Add data generation
 EOF
-git add analyze_higgs.py
+git add analyse_higgs.py
 git commit -m "Initial commit: start project" -q
 
 # 3. A messy "WIP" commit
-cat <<EOF > analyze_higgs.py
+cat <<EOF > analyse_higgs.py
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -27,7 +27,7 @@ git add .
 git commit -m "WIP" -q
 
 # 4. Another "fix" commit with a typo
-cat <<EOF > analyze_higgs.py
+cat <<EOF > analyse_higgs.py
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -39,7 +39,7 @@ git add .
 git commit -m "fix" -q
 
 # 5. The Discovery
-cat <<EOF > analyze_higgs.py
+cat <<EOF > analyse_higgs.py
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -60,7 +60,7 @@ git add .
 git commit -m "SUCCESS: HIGGS FOUND AT 125GeV!!" -q
 
 # 6. One more minor tweak before the "disaster"
-echo "# Final calibration check" >> analyze_higgs.py
+echo "# Final calibration check" >> analyse_higgs.py
 git add .
 git commit -m "minor tweak to comments" -q
 
@@ -69,17 +69,15 @@ git commit -m "minor tweak to comments" -q
 git reset --hard HEAD~2 -q
 
 # 8. Adding more "noise" to the history after the reset
-echo "print('Searching for Higgs...')" >> analyze_higgs.py
+echo "print('Searching for Higgs...')" >> analyse_higgs.py
 git add .
 git commit -m "re-trying the analysis from scratch" -q
-echo "print('Still no signal found...')" >> analyze_higgs.py
+echo "print('Still no signal found...')" >> analyse_higgs.py
 git add .
 git commit -m "add logging" -q
 
 echo "----------------------------------------------------------"
-echo "REPO READY: The Higgs discovery has been lost in the logs!"
+echo "The Higgs discovery has been lost in the logs!"
 echo "Your mission: Find the lost SUCCESS commit,"
 echo "restore it, and then clean up the history."
-echo "You have permissions to run but not edit the python file"
-echo "run cd cern_higgs_search and see if you can find it"
 echo "----------------------------------------------------------"
